@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3 align="center">form control test - 회원가입</h3>
+	<form method="post" >
+		<table border="1" align="center">
+			<tr>
+				<td align="center">이름</td>
+				<td colspan="2"><input type="text" size="10"></td>
+			</tr>
+			<tr>
+				<td align="center">아이디</td>
+				<td colspan="2"><input type="text" size="10">&nbsp; <input type="button" value="중복확인"></td>
+			</tr>
+			<tr>
+				<td align="center">비밀번호</td>
+				<td colspan="2"><input type="text" size="10" id="pass"></td>
+			</tr>
+			<tr>
+				<td align="center">비밀번호확인</td>
+				<td colspan="2"><input type="text" size="10" id="pass" required="required"></td>
+			</tr>
+			<tr>
+				<td align="center">성별</td>
+				<td><input type="radio" name="gender" value="m">남자<input type="radio" name="gender" value="f" checked="checked">여자</td>
+			</tr>
+			<tr align="center">
+				<td colspan="3" align="center">좋아하는 과일</td>
+			</tr>
+			<tr align="center">
+				<td colspan="3"><input type="checkbox" name="fruit" value="apple">사과
+				<input type="checkbox" name="fruit" value="watermelon" checked="checked">수박
+				<input type="checkbox" name="fruit" value="strawberry">딸기
+				<input type="checkbox" name="fruit" value="greape">포도</td>
+			</tr>
+			<tr>
+				<td align="center">이메일</td>
+				<td colspan="2"><input type="text" size="7">
+				<label>@</label>
+				<select id="email" name="email">
+					<option value="naver">네이버
+					<option value="google">구글
+					<option value="daum">다음
+					<option value="yahoo">야후
+					<option value="lycos">라이코스
+					<option value="dc">디시
+				</select>
+				<input type="text" size="7"> 
+				</td>
+			</tr>
+			<tr>
+				<td align="center">연락처</td>
+				<td colspan="2">
+				<select id="tel">
+					<option value="02">02
+					<option value="032">032
+					<option value="031">031
+					<option value="04">04
+					<option value="016">016
+					<option value="011">011
+					
+				</select>
+				<label><b>-</b></label><input type="text" size="5" id="tel">
+				<label><b>-</b></label><input type="text" size="5" id="tel">
+				</td>
+			</tr>
+			<tr align="center">
+				<td colspan="3"><input type="submit" value="회원가입"><input type="reset" value="초기화"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
