@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write("안녕하세요?이게 먼저 진행이 되나요?");
+	window.onload = function(){
+		setInterval(showTime, 1000)
+	};
+	
+	function showTime() {
+		var view = document.getElementById("view");
+		var date = new Date();
+		view.innerHTML= date.toLocaleTimeString();
+	}
+</script>
+</head>
+<body>
+	<h3>이게 더 늦게 시작된다~~ 이거지?</h3>
+	현재 시간 :<span id ="view"></span>
+</body>
+</html>
