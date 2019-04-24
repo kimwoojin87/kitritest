@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myClose(){
+		//오프너는 열려있는 창 기준으로 약간 부모페이지같은 것.
+		opener.document.getElementById("view").innerHTML="오늘은 그만본다."
+		self.close();
+	}
+
+</script>
+</head>
+<body>
+새로운 창입니다.
+<br><br><br><br>
+<a href="javascript:myClose();">1주일동안 열지 않기</a>
+</body>
+</html>

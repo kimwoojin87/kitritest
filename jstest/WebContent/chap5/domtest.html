@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>domtest.html</title>
+<style type="text/css">
+ table{
+ 	width:500px;
+ }
+ td{
+ 	border: 1px solid lightgray;
+ 	font-family:굴림;
+ 	font-size: 12pt;
+ 	font-weight: bold; 
+ }
+ .td1{
+ 	background-color: orange;
+ 	text-align: center;
+ }
+ .td2{
+ 	background-color: pink;
+ }
+ 
+</style>
+<script type="text/javascript">
+var index=0;
+
+function appendAnswer(){
+	index++;
+	
+	//1. tag 만들기
+	var ip = document.createElement("input");//<input>까지 만듬
+	//2. tag 속성추가
+	ip.setAttribute("type", "text");
+	ip.setAttribute("name", "answer");
+	
+	var btn = document.createElement("input");
+	btn.setAttribute("type", "button");
+	btn.setAttribute("value", "제거");
+	btn.setAttribute("onclick","deleteAnswer("+index+");");
+	
+	
+	var div = document.createElement("div");
+	div.setAttribute("id", "answer"+index);
+	
+	div.appendChild(ip);
+	div.appendChild(btn);
+	
+	
+	var span= document.getElementById("answerSpan");
+	span.appendChild(div);
+	
+	
+	//<input type="text" name="answer" id="answer">
+	//<input type="text" name="answer" id="answer">
+	//<input type="text" name="answer" id="answer">
+}
+
+function deleteAnswer(index){
+	alert(index);
+	var delDiv = document.getElementById("answer"+index);
+	if(delDiv !=null){
+		delDiv.parentNode.removeChild(delDiv);
+	}
+}
+
+function makePoll(){
+	if(document.getElementById("question").value == ""){
+		alert("질문을 입력하세요!!!");
+		return;
+	}
+	var answer = document.getElementsByName("answer");
+	for(var i=0;i<answer.length;i++){
+		if(answer[i].value == ""){
+			alert("답변을 입력하세요!!");
+			return;
+		}
+	}
+//	document.poll.action ="http://www.naver.com";
+//	document.poll.submit();
+	var form = document.getElementById("poll");
+	form.setAttribute("action","http://www.naver.com");
+	form.submit();
+}
+
+</script>
+</head>
+<body>
+	<div align="center">
+	<h3>설문조사 만들기</h3>
+	<form onsubmit="return false" name="poll" id="poll">
+		<table>
+			<tr>
+				<td class='td1'>질문</td>
+				<td class='td2'><input type="text" name="question" id="question"></td>
+			</tr>
+			<tr>
+				<td class='td1'>답변<br>
+				<button onclick="javascript:appendAnswer();">추가</button>
+				</td>
+				<td class='td2'>
+				<div><input type="text" name="answer" id="answer"></div>
+				<span id="answerSpan"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" class='td1'><button onclick="javascript:makePoll();">만들기</button></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+</body>
+</html>

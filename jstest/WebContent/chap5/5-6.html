@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>5-6.html</title>
+</head>
+<body>
+	<div id="div1">클릭해보세요.</div>
+	<script type="text/javascript">
+	document.getElementById("div1").onclick = function(){
+		alert("안녕하세요");
+	};
+	</script>
+	<span id="div2">이것도 좀 만져봐.</span>
+	<script type="text/javascript">
+	//dom 레벨2 이벤트 명세방법
+	//이벤트명에 on 생략 익스플로러9 이상에만 가능.
+	document.getElementById("div2").addEventListener("mouseenter",openAlert,false);
+	
+	
+	function openAlert(){
+		alert("안녕하세요.")	;
+	}
+	
+	
+	</script>
+	<div onclick="javascript:alert('안녕하세요?')">클릭해보아봐</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>alert,confirm,prompt</title>
+	<script type="text/javascript">
+		function alertOpen(){
+			alert("알림창입니다.");
+			console.log("확인을 눌렀네용용");
+		}
+		
+		function confirmOpen(){
+			if(confirm("확인입니까?")){
+				console.log("확인 눌렀네요.");
+			}else{
+				console.log("취소 눌렀군요.");
+			}
+		}
+		
+		function promptOpen(){
+			var txt = prompt("이름입력","");
+			console.log("당신의 이름은 "+txt+"입니다.");
+		}
+		
+		function myOpen(){
+			window.open("my.html","test","width=400,height=300")
+		}
+	</script>
+</head>
+<body>
+	<div>
+	<button onclick ="javascript:alertOpen();">알림창</button>
+	<button onclick ="javascript:confirmOpen();">확인창</button>
+	<button onclick ="javascript:promptOpen();">입력창</button>
+	<button onclick ="javascript:myOpen();">새창열기</button><br>
+	</div>
+	<div style="background-color: red">
+		 div 메세지 :
+		</div>
+	<span id="view" style="background-color: orange">
+		 span 메세지 :
+	</span>
+	<p style="background-color: steelblue">
+		모야모야
+	</p>
+	
+</body>
+</html>
