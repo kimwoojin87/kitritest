@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE booklist SYSTEM "book.dtd">
+<booklist>
+	<book isbn="러123라">
+		<title>바람과 함께 사라졌다.</title>
+		<author>
+			<name sex="녀">야호야호</name>
+			<tel>12304123</tel>
+			<address>서울시 구로구 구로구로</address>
+		</author>
+		<publisher>나눔출판사</publisher>
+		<price>30000원</price>
+	</book>
+	<book kind="소설" isbn="라123마뱌" >
+		<title>똥벤져스</title>
+		<author>
+			<writer>슈퍼맨</writer>
+			<tel>032-13213-142</tel>
+			<address>서울시 용산구 용산용산</address>
+		</author>
+		<publisher>DC코믹스</publisher>
+		<price>60000원</price>
+		<description>이거슨 수류탄이여</description>
+	</book>
+</booklist>
