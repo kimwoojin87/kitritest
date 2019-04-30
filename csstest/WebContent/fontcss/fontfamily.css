@@ -1,0 +1,8 @@
+@charset "utf-8";
+.name1{font-family:arial;}
+.name2{font-family:"Times New Roman";}
+.name3{font-family:"Times New Roman", serif;}
+.name4{font-family:"Times New Roman", sans-serif;}
+.name5{font-family:"Times New Roman", cursive;}
+.name6{font-family:"Times New Roman", fantasy;}
+.name7{font-family:"이딴 폰트가 있을까?","아니 없을걸","gill sans",monospace;}

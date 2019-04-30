@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>helloservlet2.5</display-name>
+  <servlet>
+  	<servlet-name>hs</servlet-name> <!-- 서블릿에는 servlet-name servlet-class 반드시 들어가야함-->
+  	<servlet-class>com.kitri.hello.helloservlet2</servlet-class>
+  </servlet>
+  <servlet-mapping> 
+  <servlet-name>hs</servlet-name> <!-- 서블릿맵핑에는 servlet-name url-pattern 반드시 들어가야함-->
+  <url-pattern>/hello</url-pattern><!-- url값으로 hello로 하겠다. -->
+  </servlet-mapping>
+</web-app>
