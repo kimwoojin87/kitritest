@@ -19,6 +19,8 @@ public class updateTest {
 	}
 	
 	public static void main(String[] args) {
+		
+		
 		updateTest ut = new updateTest();
 		
 		Connection con = null;

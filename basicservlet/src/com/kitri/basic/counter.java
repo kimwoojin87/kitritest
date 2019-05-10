@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class counter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	int cnt;
+	
 	@Override
 	public void init() throws ServletException {
 		cnt = 0;
