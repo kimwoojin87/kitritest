@@ -1,0 +1,77 @@
+ - 표시는 폴더
+membermvc(프로젝트이름)
+	src
+	
+	  - com.kitri.admin.controller
+	    AdminController.java (Servlet : /admin)
+	    
+	  - com.kitri.admin.model
+	  
+	  - com.kitri.admin.model.dao
+	    AdminDao.java (I)
+	    AdminDaoImpl.java
+	    
+	  - com.kitri.admin.model.service
+	    AdminService.java (I)
+	    AdminServiceImpl.java
+	  
+	  - com.kitri.member.controller
+	    MemberController.java (Servlet : /user)
+	    
+	  - com.kitri.member.model
+	    MemberDto.java
+	    MemberDetailDto.java
+	    ZipcodeDto.java
+	    
+	  - com.kitri.member.model.dao
+	    MemberDao.java (I)
+	    MemberDaoImpl.java
+	    
+	  - com.kitri.member.model.service
+	    MemberService.java (I)
+	    MemberServiceImpl.java
+	    
+	  - com.kitri.util
+	    DBConnection.java
+	    DBClose.java
+	    Encoder.java
+	    
+	  
+	
+	webContent
+	  -js : member.js
+	  -css : *.css
+	  -img : *.jpg,*.png,*.gif
+	  -admin
+	    -member
+	     memberlist.jsp
+	    
+	  -user
+	    - member
+	      member.jsp
+	      registerok.jsp
+	      registerfail.jsp
+	      idcheck.jsp
+	      zipsearch.jsp
+	      membermodify.jsp
+	      
+	    - login
+	      login.jsp
+	      loginok.jsp
+	      loginfail.jsp
+	      
+	   index.jsp
+	   
+* HttpSession & cookie (둘다 무언갈 저장하는 저장공간)
+Cookie		: client 컴퓨터에 txt타입으로 저장되므로 >> String
+사용용도 		: 아이디 자동등록, 팝업창 (1주일간 열지않기) , 홈쇼핑 최신상품 등등
+HttpSession : server 컴퓨터에 memory로 저장되므로 >> Object
+사용용도		: 
+
+*사용하기 나름이지만 일반적인*
+오늘본 상품:로그아웃,로그인 상관없이 컴퓨터에 남아있음 ->쿠키
+
+찜목록(위시리스트):로그아웃을해도 남아있음->DB사용함.
+상세정보까지는 담지않고 그냥 담아두기만함.
+장바구니:로그아웃을 하면 사라짐 ->세션 
+결제하기 바로 전단계
