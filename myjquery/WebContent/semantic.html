@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SEMANTIC.HTML</title>
+<style>
+body{
+background-image: url("http://hello-beautiful.co.kr/wp-content/uploads/2018/11/%ED%94%BC%EC%B9%B4%EC%B8%84.jpg");
+background-repeat:no-repeat;
+}
+nav>ul{
+list-style:none;
+padding-inline-start: 0px;
+}
+nav>ul>li{display:inline-block;}
+footer{
+	position:fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: gray;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(function(){
+	//dom트리에서 nav>ul>li>a객체들 찾기
+	var aArr = $("nav>ul>li>a");
+	$(aArr).click(function() {
+		var vurl = $(this).attr("href");
+		$.ajax({
+			url:vurl,
+			method:'get',
+			success:function(result){
+				$("section").html(result);
+			} //결과를 응답받은 응답내용이 function의 인자값으로 와야함.
+		});
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+<header><h1>my web</h1></header>
+<nav>
+	<ul>
+		<li><a href="login.html">로그인</a></li>
+		<li><a href="checkbox.html">checkbox.html</a></li>
+	</ul>
+</nav>
+<section>본문</section><!-- 메뉴 클릭할때마다 바뀜. -->
+<footer>사업자 : 김우진연구소 | 대표 : 김삿갓</footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(function(){
+	var chkArr = $("div>input[type=checkbox]");
+	//var allObj = checkAll[0];//자바스크립트 배열객체를 가져온것.
+	var allObj = chkArr[0];
+	var $allObj = $(allObj);
+	$allObj.click(function(){
+		for(var i=1;i<chkArr.length;i++){
+			//checkArr[i].checked = allObj.checked;
+			//$(chkArr[i]).attr("checked",$allObj.attr("checked"));//j쿼리는 따로 겟셋이없다.
+			//인자2개를 주면 1번을 2번으로 바꿔라. 인자가 1개일떈 무엇으로 바꿔라 라는 겟터의미임.
+			$(chkArr[i]).prop("checked",$allObj.prop("checked"));//attr이란 함수가 안먹힌다 싶으면 prop을써라
+			//체크박스만큼은 attr이 아니고 prop이다.
+		}
+	});
+});
+/* 	window.addEventListener("load", function() {
+		var checkAll = document.querySelectorAll("div>input[type=checkbox]");
+		var allObj = checkAll[0];//dom트리 구조이기에 첫번째 인덱스가 0에 잡혀있음.
+		allObj.addEventListener("click", function(){
+			for(var i=1;i<checkAll.length;i++){
+				checkAll[i].checked = allObj.checked;
+			}
+		});
+	}); */
+</script>
+</head>
+<body>
+<div>
+	<input type="checkbox">ALL
+</div>
+<div>
+	<input type="checkbox" checked>ONE &nbsp;&nbsp;
+	<input type="checkbox">TWO &nbsp;&nbsp;
+	<input type="checkbox">THREE
+</div>
+</body>
+</html>

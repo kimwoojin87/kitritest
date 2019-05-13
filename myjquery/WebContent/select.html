@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select.html</title>
+<style>
+#engine,#body{
+	display:none;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#car").change(function() {
+		//2.id가 engine인 객체찾기
+		//var $enginObj = $("#engine");
+		var $enginObj = $("#div2");
+		var data = '<select id="engine">';
+		
+		//1.선택된 객체의 value속성값얻기.
+		var car = $(this).val();
+		if(car == '소나타'){
+			data += '<option>Smartstream G2.0</option>'
+			data += '</select>';
+			$enginObj.html(data); //=innerHtml, innerTxt = txt(); 
+			
+			//$enginObj.css('display','inline-block');
+			//var $selectObj = $enginObj.children("#engine");//children 대신 find라는 메서드를 사용해도된다.
+			var $selectObj = $enginObj.find("#engine");
+			$selectObj.show();
+		}else if(car == '펠리세이드'){
+			data += '<option>가솔린3.8</option>'
+			data += '<option>디젤2.2</option>'
+			data += '</select>';
+			//engin객체의 innerHtml로 data대입
+			$enginObj.html(data); //=innerHtml, innerTxt = txt(); 
+			//engine객체 스타일 display를 inline-block으로 설정하기
+			//$enginObj.css('display','inline-block');
+	//		$enginObj.show();
+			var $selectObj = $enginObj.find("#engine");
+			$selectObj.show();
+		}else{
+//			$enginObj.hide();			
+			var $selectObj = $enginObj.find("#engine");
+			$selectObj.hide();
+		}
+	});
+	
+	//id가 engine인 객체의 click이벤트핸들러
+	//할일 : value속성값을 경고창에 출력
+	/* $("#engine").click(function(){//현재 dom객체가 없기떄문에 이벤트가 실행되지않음.
+		alert($(this).val());
+	}); */
+	//향후 추가될 dmo객체의 이벤트핸들러 등록방법 : on()
+	$("#div2").on("click", "#engine", function() {
+		alert($(this).val());
+	});
+	
+});
+</script>
+</head>
+<body>
+<div>
+<!-- 자동차 종류 -->
+<select id="car">
+	<option>선택하세요</option>
+	<option>소나타</option> <!-- Smartstream G2.0 -->
+	<option>펠리세이드</option><!-- 가솔린3.8,디젤2.2 -->
+</select>
+</div>
+
+<div id='div2'>
+<!-- 엔진 종류 -->
+<!-- <select id="engine">
+</select> 돔트리에서 객체를 못찾으면 널값이 반환됨 -->
+</div>
+
+<div>
+<!-- 바디타입 -->
+<select id="body">
+	
+</select>
+</div>
+
+</body>
+</html>

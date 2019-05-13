@@ -1,0 +1,27 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(function(){
+	//dom에서 form객체찾기
+	$("form").submit(function(){
+		$.ajax({
+			url:'login.do',
+			method:'post',
+			//data:'id='+$('input[name=id]').val()+'&pwd='+$('input[name=pwd]').val(), 1번째방법
+			//{id:$('input[name=id]').val,
+			//pwd:$('input[name=pwd]').val,
+			//} 2번쨰 방법
+			$('form').serialize(),
+			
+			success:function(result){
+				$("section").html(result);
+			}
+		});
+		return false;
+	});
+});
+</script>
+<form>
+  ID:<input name="id"><br>
+  PWD:<input type="password" name="pwd"><br>
+  <button>로그인</button>
+</form>
