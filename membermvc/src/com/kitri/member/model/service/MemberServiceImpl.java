@@ -13,9 +13,9 @@ public class MemberServiceImpl implements MemberService{
 		memberService = new MemberServiceImpl();
 	} //3
 	
-	private MemberServiceImpl() {} //순서 1
+	private MemberServiceImpl(){} //순서 1
 	
-	public static MemberService getMemberService() {
+	public static MemberService getMemberService(){
 		return memberService;
 	} //4
 	//객체를 단 1번만 만드는 개발방법 : 싱글톤

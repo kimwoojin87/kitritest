@@ -1,0 +1,42 @@
+쿠키의 내부매커니즘
+
+
+                        a.do요청
+클라이언트 웹브라우저 --------------------> 서버
+                  method, url, HTTPver
+                      요청Header
+                      요청BodyContent
+                                       Cookie c = new Cookie("String a","String b");
+                                       c.setMaxAge(); -- 유효기간설정. 기본단위 초.
+                                       response.addCookie;
+                 <-------------------- 
+                                응답 
+     	     HTTPver    Status   info                    
+                응답header   200      Ok
+            	         404    NotFound
+                	     405     Method~~
+                    	 500   IntenalServerFind
+                         
+                 --------------------->
+                                결제요청
+                                       Cookie []arr=request.getCookie;
+                                       if(arr !_null){
+                                        for(cookie c : arr){
+                                         if(c.getName().equeals("loginInfo")){\\결제처리RETURN;\\}
+                                          else("로그인하세요"){}
+    
+    
+                                          
+세션
+
+
+
+                        a.do요청
+클라이언트 웹브라우저 --------------------> 서버
+                  method, url, HTTPver
+                      요청Header
+                      요청BodyContent
+                                       Httpsession s = request.getSession();
+                                                                    세션의 내부매커니즘으로 쿠키를 생성함
+                                       
+                 <-------------------- 

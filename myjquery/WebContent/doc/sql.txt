@@ -1,0 +1,10 @@
+create table customer(
+	id varchar2(16),
+	pass vrachar2(16),
+	name varchar2(30),
+	address varchar2(100),
+	constraint customer_pk PRIMARY KEY(id));
+	
+insert into customer(id,pass,name) values ('test','testp','테스트');
+
+commit;

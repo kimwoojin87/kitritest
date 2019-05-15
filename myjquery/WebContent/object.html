@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var personObj={name:"김우진",
+		gender: "F",
+		address:"인천맨",
+		walk: function(){
+			console.log(this.name+"이 두발로 걷는다");//자바스크립트에선this생략 불가능
+		}
+	};
+console.log(personObj.name); // 김우진
+personObj.walk();
+</script>
+</head>
+<body>
+
+</body>
+</html>

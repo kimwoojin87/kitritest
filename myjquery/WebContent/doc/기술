@@ -1,0 +1,20 @@
+웹서버
+아파치   PHP
+IIS    ASP
+톰캣     JSP/Servlet
+
+서버마다 사용가능한 기술이 나뉘어지는 이유.
+아파치 웹서버에는 PHP실행DLL이 내장되어있음.
+IIS 는 ASP실행모듈이 내장되어있음.
+톰캣은 Jsp/Servlet 엔진이 내장되어있음.
+
+실무에선..
+아파치(IIS)+톰캣 IIS는 MS계열제품. 
+
+웹서버구조
+ server Layer : 요청/응답 담당
+ engine Layer : 
+ service Layer :
+  *img2참조
+ 파라미터는 setparameter가 없음. 
+ 어트리뷰트는 가능.

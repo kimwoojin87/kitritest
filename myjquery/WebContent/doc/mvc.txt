@@ -1,0 +1,34 @@
+페이지 이동방식
+1.sendRedirect
+2.forward
+                  sendRidirect방식  sendRidirect를 쓰면 뷰는 안쓰겠다는 말과 같다.
+        client           ||             ws
+                        (요청)   
+        ------------------------>
+             /a          ||          Aservlet                    
+                         ||          response.sendRedirect("b"); //응답헤더를 redirect값 설정
+        <------------------------                                   ======
+                        (응답)                                      || A ||  aservlet객체생성
+             응답헤더해석                                                            ======
+             
+        ------------------------->
+                      (자동재요청)     
+                      
+                      
+                  forward 방식       forward를 써야 mvc에 완벽하게 부합함
+        client           ||             ws
+                        (요청)   
+        ------------------------>
+             /c          ||          Cservlet
+                         ||          RequestDispatcher rd = request.getRequestDispathcer("b");
+                         ||          rd.forward(request,response);                    
+                         ||                           //forward는 리퀘스트,리스폰스전달하고 가져오지않음
+        <------------------------                                   ======      ======
+                        (응답)                                      || C ||---->|| B ||  
+             응답헤더해석                                                            ======      ======
+             
+        ------------------------->
+                      (자동재요청)     
+                      
+                      
+                     include(request,response) 인클루드방식은 forward처럼 B로 전달하지만 다시 c로 가져옴 

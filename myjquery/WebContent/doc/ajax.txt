@@ -1,0 +1,10 @@
+$.ajax({data:{id:'test,pwd:'testp},
+		error:funtion(jqXHR jqXHR, String textStatus, String errorThrown){
+		에러가호출됬을때 실행됨 = 404오류일떄 자동실행된다.},
+		method:get or post or put(Restful 과 관련있음.),
+		success:Function( Anything data, String textStatus, jqXHR jqXHR ),
+		
+		
+		
+})
+$.ajax({data:'id=test&pwd=testp'})
