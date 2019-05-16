@@ -73,7 +73,6 @@ private static AdminDao adminDao;
 		} finally {
 			DBClose.close(con, pstm, rs);
 		}
-		System.out.println(list.size());
 		return list;
 	}
 	

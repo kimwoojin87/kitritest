@@ -18,7 +18,7 @@ function deleteMember(){
 <a href="<%= root%>/user?act=mvmodify">정보수정</a>
 <a href="#" onclick="javascript:deleteMember();">회원탈퇴</a>
 <%
-	if("hehello".equals(memberDto.getId())){
+	if("yaho".equals(memberDto.getId())){
 %>
 <a href="<%=root%>/admin?act=memberlist">관리자</a>
 <%

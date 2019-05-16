@@ -11,11 +11,17 @@
 #array{
 	border: thin; overflow: auto; border-color: tomato;
 }
+section{
+	height: 60%; width: 60%;
+}
+.btn-toolbar{
+	display : inherit;
+}
 </style>
 <script>
 function search(){
 	$.ajax({
-		url : "memberlist",
+		url : "/testweb/memberlist",
 		success : function(result){
 			$("#index").html(result);
 		}	

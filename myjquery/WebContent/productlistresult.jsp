@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%List<Product> list =(List)request.getAttribute("productlist");%>
+<%List<Product> list =(List<Product>)request.getAttribute("productlist");%>
 <script>
 function img(name){
 	location.href = "productinfo?Prod_no="+name;

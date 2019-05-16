@@ -28,7 +28,6 @@ public class AdminServiceImpl implements AdminService{
 		String result = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
 		result += "<memberlist>";
 		
-		System.out.println(list);
 		for(MemberDetailDto memberDetailDto : list) {
 			result += "<member>\n";
 			result += "		<id>"+memberDetailDto.getId()+"</id>\n";

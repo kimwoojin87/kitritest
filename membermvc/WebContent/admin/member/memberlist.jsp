@@ -61,7 +61,8 @@ function memberList(key, word){
 					<option value="address">주소</option>
 				</select>
 			  <input type="text" class="form-control" id="word" name="word">
-			  <button type="button" class="btn btn-primary" id="searchBtn">검색</button>
+			  <button type="button" class="btn btn-primary" id="searchBtn">검색</button>&nbsp;&nbsp;
+			  <button type="button" class="btn btn-primary" onclick="javascript:history.go(-1)">이전으로</button>
 			</form>
   		</td>
   	</tr>

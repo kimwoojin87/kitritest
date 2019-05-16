@@ -11,5 +11,6 @@ MemberDetailDto memberDetailDto = (MemberDetailDto)request.getAttribute("userInf
 전화번호 : <%=memberDetailDto.getTel1()%>-<%=memberDetailDto.getTel2()%>-<%=memberDetailDto.getTel3()%><br>
 주소 : <%=memberDetailDto.getAddress()%> <%=memberDetailDto.getAddressDetail()%><br>
 로그인 후 모든 서비스를 이용할 수 있습니다.<br>
-<a href="<%=root%>/user/login.jsp">로그인</a>
+<a href="<%=root%>/user?act=mvlogin">로그인</a>
+
 <%@ include file="/template/footer.jsp" %>

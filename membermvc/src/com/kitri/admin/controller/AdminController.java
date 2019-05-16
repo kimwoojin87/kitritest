@@ -28,7 +28,6 @@ public class AdminController extends HttpServlet {
 		} else if("getmemberlist".equals(act)) {
 			String key = request.getParameter("key");
 			String word = request.getParameter("word");
-			System.out.println(key+"||"+word);
 			
 			String resultXML = AdminServiceImpl.getAdminService().getMemberList(key, word);
 			response.setContentType("text/xml;charset=utf-8");
