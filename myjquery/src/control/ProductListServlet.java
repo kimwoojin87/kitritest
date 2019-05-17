@@ -27,16 +27,14 @@ public class ProductListServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		productservice = new ProductService();
 	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//request.getParameter("form");
-		List<Product> list = productservice.findAll();
-		
-		request.setAttribute("productlist", list);
-		
-		String path = "productlistresult.jsp";
+		//request.getParameter("form"); 요청받을 데이터가 없음.
+		List<Product> list = productservice.findAll(); //서비스로직호출
+		request.setAttribute("productlist", list); // servletcontext:웹컨텐트 전체에서  httpsession:클라이언트별로 갖고있을 정보 request: 요청페이지에서만 담을 정보
+		String path = "productlistresult.jsp"; // 서버사이드에서 앞에 /가 붙으면 웹컨텍스트 안쪽에서의 경로.
 		RequestDispatcher rd = request.getRequestDispatcher(path);
 		rd.forward(request, response);
 	}
-
-
+	
 }

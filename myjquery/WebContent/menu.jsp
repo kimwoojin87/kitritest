@@ -9,4 +9,7 @@
 <%}else{//로그인 한경우 %>
 		<li><a href="/myjquery/logout">로그아웃</a></li>
 <%} %>
+		<li><a href="productlist">상품목록</a>
+		<li><a href="productlistjson">상품목록JSON</a>
+		<li><a href="viewcart">장바구니보기</a>
 	</ul>
