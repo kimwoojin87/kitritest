@@ -19,20 +19,29 @@ section{
 }
 </style>
 <script>
-function search(){
+function search(currentpage){
+	
 	$.ajax({
 		url : "/testweb/memberlist",
+		data : "currentpage="+currentpage,
 		success : function(result){
 			$("#index").html(result);
 		}	
 	});
+}
+
+
+function nextPage(){
+	var curpage = $(".btn-secondary").val();
+	var ccc = (int)curpage + 1;
+	search(ccc);
 }
 </script>
 </head>
 <body>
 <div id="array" align="center" >
 <div>
-<button type="button" class="btn btn-danger" onclick="javascript:search()" id="search">검색하기</button>
+<button type="button" class="btn btn-danger" onclick="javascript:search(1)" id="search">검색하기</button>
 </div>
 <section id="index">여기가 입력될 곳</section>
 </div>

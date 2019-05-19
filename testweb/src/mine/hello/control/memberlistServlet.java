@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mine.hello.dto.MemDTO;
+import mine.hello.dto.MemPageDTO;
 import mine.hello.service.dao.memDao;
 
 /**
@@ -34,15 +35,29 @@ public class memberlistServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("여기로 들어는 왔나?");
 		try {
-			List<MemDTO> list = memdao.selectALL();
+			int currentpage = Integer.parseInt(request.getParameter("currentpage")); //화면에서 누른 페이지수 
+			int cntperpage = 5;				//페이지당 표시할 게시물건수
+			
+			int cnt = memdao.cntPage();  //전체 페이지수
+			List<MemDTO> list = memdao.selectALL(currentpage,cntperpage);	
+			//화면에서 누른 페이지수, 페이지당 표시할 게시물건수
+			// 파라미터로 넘기는 이유 : 관리포인트 줄이기 위해서.
+			
+			//
+			MemPageDTO page = new MemPageDTO();
+			page.setCurrentpage(currentpage);
+			
+			int totalPage = (int)(Math.ceil(cnt / cntperpage));
+			
+			page.setTotalPage(totalPage);
 			
 			request.setAttribute("hmemberlist", list);
+			request.setAttribute("page", page);
 			String path = "list/alllistresult.jsp";
 			
 			RequestDispatcher rs = request.getRequestDispatcher(path);
 			rs.forward(request, response);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

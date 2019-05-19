@@ -1,9 +1,13 @@
+<%@page import="mine.hello.dto.MemPageDTO"%>
 <%@page import="mine.hello.dto.MemDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%List<MemDTO> list = (List)request.getAttribute("hmemberlist");%>
+<%List<MemDTO> list = (List)request.getAttribute("hmemberlist");
+  MemPageDTO pageDto = (MemPageDTO)request.getAttribute("page");
+
+%>
 <!DOCTYPE html>
 <div>
 	<table class="table table-hover">
@@ -34,10 +38,22 @@
 	</table>
   		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group mr-2" role="group" aria-label="First group">
+  <!-- 
     <button type="button" class="btn btn-secondary">1</button>
     <button type="button" class="btn btn-secondary">2</button>
     <button type="button" class="btn btn-secondary">3</button>
     <button type="button" class="btn btn-secondary">4</button>
     <button type="button" class="btn btn-secondary">5</button>
+   -->
+   <button type="button"  onclick="prevPage()">이전</button>
+   <%for(int i=1;i<=pageDto.getTotalPage();i++){
+   		if(i == pageDto.getCurrentpage()){
+   %>
+	   	<button type="button" class="btn btn-secondary" value="<%=i%>" onclick="search(<%=i%>)"><%=i%></button>
+	   <%}else{ %>
+	   <button type="button" onclick="search(<%=i%>)"><%=i%></button>
+	   <%}
+	}%>
+   <button type="button" onclick="nextPage()">다음</button>
   </div>
 </div>
