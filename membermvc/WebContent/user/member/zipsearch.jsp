@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%String root2 = request.getContextPath();%>    
 <script type="text/javascript">
 var ziplistview;
 
@@ -12,7 +12,7 @@ function zipSearch() {
 		return;
 	}else{
 		var params = "act=zipsearch&doro="+ doro;
-		sendRequest("<%=root%>/user",params,zipsearchResult,"GET");
+		sendRequest("<%=root2%>/user",params,zipsearchResult,"GET");
 	}
 }
 function selectZip(z, a) {
@@ -84,4 +84,3 @@ function zipsearchResult() {
             </div>
         </div>
     </div>
-</div>
