@@ -1,5 +1,5 @@
 <%@page import="com.kitri.dto.Customer"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,5 +21,9 @@ ${param.a+10}
 %>
 고객이름: <%=((Customer)request.getAttribute("c")).getName() %><br>
 고객이름: ${requestScope.c.name}
+
+<hr>
+웹컨텍스트명: /myeljstl
+${pageContext.request.contextPath}
 </body>
 </html>

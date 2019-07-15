@@ -36,10 +36,11 @@ public class AddCartServlet extends HttpServlet {
 			intQuantity += inte.intValue();
 		}				
 		c.put(p, intQuantity);//장바구니에 상품,수량 추가
-		
+		System.out.println(c);
 		String path ="/addcartresult.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(path);
 		rd.forward(request, response);
+		
 //		
 //		System.out.println("--장바구니 내용--");
 //		Set<Product> keys = c.keySet();

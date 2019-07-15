@@ -23,6 +23,8 @@ public class ViewCartServlet extends HttpServlet {
 		service = new ProductService();
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String userAgent = request.getHeader("User-Agent");
+		
 		HttpSession session = request.getSession();
 		Map<Product, Integer> c = (Map)session.getAttribute("cart");
 		Map<Product, Integer> rc = new HashMap<>();
@@ -38,6 +40,9 @@ public class ViewCartServlet extends HttpServlet {
 			}
 			request.setAttribute("rcart", rc);
 			String path = "/viewcartresult.jsp";
+			if(userAgent.contains("Dalvik")) {//안드로이드 앱에서 요청
+				path = "/viewcartresultjson.jsp";
+			}
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 		}

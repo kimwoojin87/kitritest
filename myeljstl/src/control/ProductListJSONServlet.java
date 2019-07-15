@@ -21,6 +21,7 @@ public class ProductListJSONServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Product> list = service.findAll();
 		request.setAttribute("productlist", list);
+		
 		String path = "productlistjsonresult.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(path);
 		rd.forward(request, response);
