@@ -1,0 +1,67 @@
+*** jsp (Java Server Page)
+servlet(*.java) : html in java -> 자바안에 html 이 포함된 구조. 디자인에 있어서 변동하기가 너무 어렵다.
+jsp(*.jsp) : java in html -> html 안에 자바가 포함된 구조. html과 동급.
+
+ * compile 기반 :servlet jsp(run) 디자인과 코드를 혼용하기때문에 코드가 복잡해진다.
+   script 기반 : jsp(code),asp,php  컴파일기반에 비해 처리속도가 느리다.
+   
+   -jsp- 는 코딩할때는 script기반이라 쉽고, 실행시에는 compile기반이라 처리속도가 빠르다.
+			
+ -- Script Element : 스크립트요소 표현방법은 언어마다 조금 다르지만 jsp는 <% JavaCode %> 
+  
+	1. 선언부 : jsp에서 사용될 변수, 메소드를 선언하는 영역. 선언부에 코딩한 내용들은 서블릿의 선언부에 들어간다.
+	형식) <%! JavaCode %> 
+	예)
+	<%!
+	String name;
+	int age;
+	
+	public void setZ(){
+	
+	}
+	%>
+	
+	
+	2. 처리부 : jsp가 호출 될때마다 매번 실행 되는 영역. >> service method request,response 관련..
+	형식) <% JavaCode %>
+	예)
+	<%
+	name = request.getParameter("name");
+	
+	out.println(name);
+	%>
+	
+	3. 출력부 : client 출력.
+	형식) <%= JavaCode(정확히는 문자열) %>
+	예)
+	<%= name %> == <% out.println(name); %> 출력부에서 name태그를 쓰는것과 처리부에서 out.print와 같다.
+	#주의할점#  변수뒤에 ; 세미콜론을 찍지말것.
+	
+public class ClassName [servlet]{
+	
+	선언부(변수,메소드(){})
+	
+	public void service(request, response){
+		
+		처리부
+		
+		out.println(""); // 출력부(표현식)
+		
+	}
+	
+}	
+
+
+D:\javadata\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\work\Catalina\localhost\basicjsp\org\apache\jsp
+확인 할 수 있는 장소
+
+
+-- directive(지시문) :형식> <%@ 지시문종류 속성="값" 속성2="값2".....속성N="값N" %>
+1. page
+400번대 에러 클라이언트 실수 500번대 에러 서버 실수
+
+2. include
+
+
+3. taglib(태그의 집합)
+
